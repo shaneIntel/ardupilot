@@ -569,6 +569,20 @@ void AP_Terrain::update_reference_offset(void)
     have_reference_offset = true;
 }
 
+/*
+  This will be added to the lua bindings so the script can dynamically change the reference offset variable
+ */
+void AP_Terrain::set_reference_offset_value(float reference_offset_m) {
+    reference_offset = reference_offset_m;
+}
+
+/*
+  This will be added to the lua bindings so the script can see what the reference offset variable is
+ */
+float AP_Terrain::get_reference_offset_value(void) {
+    return reference_offset;
+}
+
 
 namespace AP {
 
